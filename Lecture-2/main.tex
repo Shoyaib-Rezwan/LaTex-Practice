@@ -1,0 +1,140 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{multicol}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue
+}
+\title{Lecture 2}
+\author{Rakin Haider}
+\date{December 2025}
+
+\begin{document}
+
+\tableofcontents
+\maketitle
+
+
+\section{Figure}
+\subsection{Basic Figure}
+
+% \includegraphics[optional_parameters]{img.jpg}
+\includegraphics{Images/Mango.png}
+
+\pagebreak
+
+\subsection{Image Size}
+\includegraphics[height=6cm, width=6cm]{Images/Mango.png}
+\pagebreak
+
+\subsection{Image Scale}
+\includegraphics[scale=0.5]{Images/Mango.png}
+\includegraphics[scale=1.2]{Images/Mango.png}
+
+\subsection{Image Rotate}
+
+\textbf{Analyze the following rotations against the given angle very carefully and find out the relation between the images and their rotations. Consider the baseline as the pole of rotaion}
+\includegraphics[angle=45, scale=0.5]{Images/Mango.png}
+\includegraphics[angle=-45, scale=0.5]{Images/Mango.png}
+\includegraphics[angle=135, scale=0.5]{Images/Mango.png}
+
+\pagebreak
+
+\subsection{Image sizing wrt a document}
+\includegraphics[width=0.5\linewidth]{Images/Mango.png}
+\lipsum[5]
+\pagebreak
+
+\subsection{Image positioning , alignment, referencing}
+Fusce mauris. Vestibulum luctus nibh at lectus. Sed bibendum, nulla a faucibus semper, leo velit ultricies tellus, ac venenatis arcu wisi vel nisl. Vestibulum diam. Aliquam pellentesque, augue quis sagittis posuere, turpis lacus congue quam, in hendrerit risus eros eget felis. Maecenas eget erat in sapien mattis porttitor. Vestibulum porttitor. 
+\begin{figure}[htbp]
+    \includegraphics[]{Images/Mango.png}
+    \caption{Mango1}
+    \label{fig:Mango1} %just a convention
+    % h-> here
+    %t-> top
+    % b-> bottom
+    % p-> new page
+    % !-> stronger request
+    % H -> strongest here request
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[]{Images/Mango.png}
+    \caption{Mango2}
+    \label{fig:Mango2}
+\end{figure}
+Nulla facilisi. In above we can see figure \ref{fig:Mango2} Sed a turpis eu lacus commodo facilisis. Morbi fringilla, wisi in dignissim interdum, justo lectus sagittis dui, et vehicula libero dui cursus dui. Mauris tempor ligula sed lacus. Duis cursus enim ut augue. Cras ac magna. Cras nulla. Nulla egestas. Curabitur a leo. Quisque egestas wisi eget nunc. Nam feugiat lacus vel est. Curabitur consectetuer
+
+\pagebreak
+\subsection{Image Alignment}
+\begin{figure}[H]
+    \centering %% center alignment
+    \includegraphics[width=0.5\linewidth]{Images/Mango.png}
+\end{figure}    
+\begin{figure}[H]
+    \hfill %% right----> basically this is horizontal fill from the left
+    \includegraphics[width=0.5\linewidth]{Images/Mango.png}
+\end{figure}    
+\pagebreak
+
+\subsection{Wrap a figure around a text}
+
+\begin{wrapfigure}{l}{0.5\linewidth}
+    \centering
+    \includegraphics[width=0.7\linewidth]{Images/Mango.png} %this linewidth is not the total linewidth of the page, rather it's the line-width of the wrapfigure environment
+\end{wrapfigure}
+Nulla facilisi. Sed a turpis eu lacus commodo facilisis. Morbi fringilla, wisi in dignissim interdum, justo lectus sagittis dui, et vehicula libero dui cursus dui. Mauris tempor ligula sed lacus. Duis cursus enim ut augue. Cras ac magna. Cras nulla. Nulla egestas. Curabitur a leo. Quisque egestas wisi eget nunc. Nam feugiat lacus vel est. Curabitur consectetuer. Nulla facilisi. Sed a turpis eu lacus commodo facilisis. Morbi fringilla, wisi in dignissim interdum, justo lectus sagittis dui, et vehicula libero dui cursus dui. Mauris tempor ligula sed lacus. Duis cursus enim ut augue. Cras ac magna. Cras nulla. Nulla egestas. Curabitur a leo. Quisque egestas wisi eget nunc. Nam feugiat lacus vel est. Curabitur consectetuer
+
+\pagebreak
+
+\begin{wrapfigure}{r}{0.5\linewidth}
+    \centering
+    \includegraphics[width=0.7\linewidth]{Images/Mango.png} %this linewidth is not the total linewidth of the page, rather it's the line-width of the wrapfigure environment
+\end{wrapfigure}
+Nulla facilisi. Sed a turpis eu lacus commodo facilisis. Morbi fringilla, wisi in dignissim interdum, justo lectus sagittis dui, et vehicula libero dui cursus dui. Mauris tempor ligula sed lacus. Duis cursus enim ut augue. Cras ac magna. Cras nulla. Nulla egestas. Curabitur a leo. Quisque egestas wisi eget nunc. Nam feugiat lacus vel est. Curabitur consectetuer. Nulla facilisi. Sed a turpis eu lacus commodo facilisis. Morbi fringilla, wisi in dignissim interdum, justo lectus sagittis dui, et vehicula libero dui cursus dui. Mauris tempor ligula sed lacus. Duis cursus enim ut augue. Cras ac magna. Cras nulla. Nulla egestas. Curabitur a leo. Quisque egestas wisi eget nunc. Nam feugiat lacus vel est. Curabitur consectetuer
+
+\pagebreak
+
+\subsection{subfigures}
+
+\begin{figure}[H]
+
+    \centering
+    \begin{subfigure}{0.3\linewidth}
+        \includegraphics[width=\linewidth]{Images/Mango.png}
+        \caption{Mango}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\linewidth}
+        \includegraphics[width=\linewidth]{Images/Orange.png}
+        \caption{Orange}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\linewidth}
+        \includegraphics[width=\linewidth]{Images/Strawberry.png}
+        \caption{Strawberry}
+    \end{subfigure}
+    \hfil
+    \caption{A collection of fruits}
+    \label{fig:fruit_collection}
+\end{figure}
+
+\pagebreak
+
+\subsection{Multicolumn text}
+\begin{multicols}{2}
+    \lipsum[1-2]
+    \begin{figure}[H] %must
+        \includegraphics[width=\linewidth]{Images/Mango.png}
+    \end{figure}
+    \lipsum[1-5]
+\end{multicols}
+
+\end{document}
