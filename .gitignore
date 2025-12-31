@@ -6,3 +6,6 @@
 *.out
 *.synctex.gz
 *.toc
+*.bbl
+*.lof
+*.blg

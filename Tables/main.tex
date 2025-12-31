@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+
+% \setlength{\tabcolsep}{18pt} %Gap before the text starts
+\renewcommand{\arraystretch}{1.5} %cell height scaling
+\setlength{\arrayrulewidth}{0.5mm} %thicness of the border
+% \arrayrulecolor{red}
+\newcolumntype{s}{>{\columncolor{orange!30}}c} %defining a new type of column
+
+\title{Table practice}
+\author{Md. Shoyaib Rezwan}
+\date{30 Dec 2025}
+
+\begin{document}
+\maketitle
+
+\section{Table}
+
+\begin{tabular}{c|c} %c=center
+    This & is\\
+    a & table
+\end{tabular}\\
+\begin{tabular}{|l|r|} % l=left, r= right align
+    This & is\\
+    a & table
+\end{tabular}\\
+\begin{tabular}{|l|r|} % l=left, r= right align
+    \hline This & is\\ \hline
+    a & really really really really really really really really really really really long table\\ \hline
+\end{tabular}\\
+\\
+\pagebreak
+\subsection{Try Out the following code withot using the xcolor package}
+% \\ %But the above table has a huge cell. Let's justify the cell width
+% \begin{tabular}{|l|m{3cm}|} % m= middle in the big colum. Try with b (for bottom) and p (for top)
+%     \hline This & is\\ \hline
+%     a & really really really really really really really really really really really long table\\ \hline
+% \end{tabular}\\
+% \\
+% \\ %Use parabox to control line breaks
+% \begin{tabular}{|l|m{4cm}|} % m= middle in the big colum. Try with b (for bottom) and p (for top)
+%     \hline This & is\\ \hline
+%     a & \parbox{4cm}{really really really} really really really really really really really really long table\\ \hline
+% \end{tabular}\\
+\pagebreak
+
+\subsection{More coplex tables}
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{A multicolumn}} \\ \hline
+    1 & 2 & 3 \\ \hline
+    \multirow{2}{3cm}{A multirow} & 4 & 5\\
+    & 6 & 7\\ \hline 
+\end{tabular}
+
+\pagebreak
+\subsection{Coloring Table}
+
+\begin{table}[!h]
+\centering
+\rowcolors{2}{red!20}{green!20}
+\begin{tabular}{|c|c|s|}
+\hline
+\textbf{Title} & \textbf{Views} & \textbf{\textit{Watch hours}} \\ \hline
+Baye's Theorem- The simplest case & 943,912 & 45,553 \\ \hline
+Intro to conditional probability & 795,451 & 39,108 \\ \hline
+Intro to LaTex: Learn to write beautiful math equations & 611,650 & 34,301 \\ \hline
+\rowcolor{yellow!50}We need to talk about cheating in universities & 540,647 & \cellcolor{black!10}47,977 \\ \hline
+Conditional Statements: if p then q & 436,739 & 20,423 \\ \hline
+What is cos( cos( cos..... & 400,676 & 21,940 \\ \hline 
+
+\end{tabular}
+\caption{Most Watched Youtube Videos}
+\label{table:Youtube}
+\end{table}
+
+\end{document}
