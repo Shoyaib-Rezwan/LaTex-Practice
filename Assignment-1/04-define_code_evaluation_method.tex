@@ -1,0 +1,30 @@
+\section{Define Code Evaluation Method}
+The insights of our formative study led to the investigation of our \textbf{RQ1} regarding evaluation dimensions and optimization strategies that programmers normally use. As indicated by DG1, we decided to evaluate the C++ code on five key metrics: redundancy, documentation, clarity, time efficiency, and space efficiency. 
+
+\subsection{Data Collection}
+The researchers utilized the Performance-Improving Edits (PIE) dataset \cite{shypula2023learning}, which consists of human-programmer optimizations from CodeNet \cite{puri2021codenet} competitive programming tasks. C++ was chosen as the target language because of its importance in performance-critical applications and its compatibility with the Gem5 simulator. Since C++ submissions often focus on fine-grained optimizations, they provide an ideal basis for analyzing time and space efficiency metrics.
+
+To maintain high data quality, the team filtered submissions to include only functionally correct programs that passed all test cases and runtime constraints. Each program was then paired with its improved version for comparative analysis. By using the Gem5 simulator, the researchers normalized execution times to remove inconsistencies in raw runtime data. The final dataset comprises 77,967 program pairs across various problem domains.
+
+\subsection{Data Analysis and Results }
+
+\subsubsection{High-Quality Code Characteristics}
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=\linewidth]{dimension_distribution.png}
+    \caption{Distributions of key metrics: clarity, redundancy, time efficiency, space efficiency, and documentation in PIE dataset.}
+    \Description{Distributions of key metrics: clarity, redundancy, time efficiency, space efficiency, and documentation in PIE dataset.}
+    \label{fig:dimension_distribution}
+\end{figure}
+ We began the analysis by describing the general characteristics of these C++ codes and deciding what parameters needed to be used in a five-dimensional framework. Programs in the PIE dataset demonstrate strong performance across all five optimization dimensions (Figure \ref{fig:dimension_distribution}). Most programs exhibit high clarity (fewer than 10 issues per file) and low redundancy (fewer than 5 redundant constructs), indicating well-structured and efficient code. Space and time efficiency metrics cluster around optimal values, while documentation scores fall within moderate ranges (0.1-0.3). 
+
+ \subsubsection{ Multi-Dimensional Code Quality Analysis}
+ \input{tables/evaluation_methods.tex}
+
+Table \ref{tab:evaluation_methods} presents our analysis of five key metrics across the PIE dataset. The results 
+reveal distinct patterns: 
+\textbf{Clarity:} 58.65\% of files contain fewer than 10 clarity-related issues, indicating generally well-structured code. 
+\textbf{Redundancy:} 32.36\% of files show moderate to high levels of redundant constructs, suggesting optimization opportunities. 
+\textbf{Space Efficiency:} 19.19\% of files consume significantly more memory than average, highlighting areas for memory optimization. 
+\textbf{Documentation:} 6.30\% of files demonstrate high semantic alignment between code and documentation, while 5.60\% show minimal documentation efforts. 
+\textbf{Time Efficiency:} 1.41\% of files achieve exceptional performance, representing solutions that excel across all metrics. 

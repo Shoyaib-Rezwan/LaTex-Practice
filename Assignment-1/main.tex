@@ -1,0 +1,99 @@
+\documentclass[manuscript,review]{acmart}
+\usepackage{enumitem}
+\usepackage{afterpage}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\graphicspath{{./figures/}}
+
+\title{MACEDON : Supporting Programmers with Real-Time 
+Multi-Dimensional Code Evaluation and Optimization }
+
+%author1
+\author{Xuye Liu}
+\affiliation{
+    \institution{University of Waterloo }
+    \city{Waterloo}
+    \state{Ontario}
+    \country{Canada}
+}
+\email{x827liu@uwaterloo.ca}
+
+%author2
+\author{Yuzhe You}
+\affiliation{
+    \institution{University of Waterloo }
+    \city{Waterloo}
+    \state{Ontario}
+    \country{Canada}
+}
+\email{y28you@uwaterloo.ca}
+
+%author3
+\author{Xinrong Qiu}
+\affiliation{
+    \institution{University of Waterloo }
+    \city{Waterloo}
+    \state{Ontario}
+    \country{Canada}
+}
+\email{a3qiu@uwaterloo.ca}
+
+%author4
+\author{Tengfei Ma}
+\affiliation{
+    \institution{Stony Brook University}
+    \department{Department of Biomedical Informatics }
+    \city{Stony Brook}
+    \state{New York}
+    \country{USA}
+}
+\email{tengfei.ma@stonybrook.edu }
+
+%author5
+\author{Jian Zhao}
+\affiliation{
+    \institution{University of Waterloo }
+    \city{Waterloo}
+    \state{Ontario}
+    \country{Canada}
+}
+\email{jianzhao@uwaterloo.ca}
+
+\begin{document}
+%CCS
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10003120.10003123.10010860.10010858</concept_id>
+       <concept_desc>Human-centered computing~User interface design</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10003120.10003121.10003124.10010870</concept_id>
+       <concept_desc>Human-centered computing~Natural language interfaces</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Human-centered computing~User interface design}
+\ccsdesc[500]{Human-centered computing~Natural language interfaces}
+
+\keywords{Code Evaluation and Optimization, Code Generation, Programming Interface, Large Language Models}
+
+\maketitle
+
+\input{abstract.tex}
+
+\input{01-introduction.tex}
+
+\input{02-related_work.tex}
+
+\input{03-design_process_and_goals.tex}
+
+\input{04-define_code_evaluation_method.tex}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

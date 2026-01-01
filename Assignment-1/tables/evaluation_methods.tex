@@ -1,0 +1,18 @@
+\afterpage{
+    \begin{table}[!t]
+    \centering
+    \caption{Evaluation methods, formulas, and optimization examples for each dimension. Notation: $perc(.)$ returns a training-set percentile rank in $[0,1]$; $T_{exec}$ is execution time; $M_{usage}$ is peak memory usage; $Reduntant_{lines} counts duplicate/dead lines$. For clarity, $f_{i}$ are style factors with weights $w_{i}(\Sigma_{i}w_{i}=1)$. For documentation, $S_{sim}$ is the cosine similarity between a code segment and its accompanying natural language documentation (e.g., CodeBERT embeddings). The ceiling operator $\lceil . \rceil$ maps the 0-1 value onto the common 1-10 rubric (top 10\% receive 10). }
+    \Description{tab:evaluation_methods}
+    \label{tab:evaluation_methods}
+    \begin{tabularx}{\linewidth}{l >{\raggedright\arraybackslash}p{0.35\linewidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+        \toprule
+        \textbf{Metric} & \textbf{Formula} & \textbf{Evaluation Method} & \textbf{Examples(Original $\to$ Optimized)}\\
+        \toprule
+        \textbf{Time Efficiency} & $Score=\lceil 10(1-perc(T_{exec})) \rceil$ & Algorithmic complexity and runtime behavior & $pow(x,2)\to x*x$\\ \midrule
+        \textbf{Space Efficiency} & $Score=\lceil 10(1-perc(M_{usage})) \rceil$ & Memory footprint and data structure usage  & vector<vector<int>> mat(n, vector<int>(n,0))$\to$ vector<int>(n*n,0)\\ \midrule
+        \textbf{Clarity} & $Score=\lceil 10(1-\Sigma_{i}w_{i}perc(f_{i})) \rceil$ & Magic literals, naming consistency, and statement length Descriptive names and magic number avoidance  & int a=0;$\to$ int sum=0; int f(int x);$\to$ int computeSquare(int x)\\ \midrule
+        \textbf{Documentation} & $Score=\lceil 10(perc(S_{sim})) \rceil$ & Embedding-based semantic similarity between code and documentation  & // calculate result $\to$ // Computes total revenue from all entries\\ \midrule
+        \textbf{Redundancy} & $Score=\lceil 10(1-perc(Redundant_{lines})) \rceil$ & Duplicate code and dead code detection  & for(...) print(x); for(...) print(x);$\to$ for(...) print(x);\\ \bottomrule
+    \end{tabularx}
+\end{table}
+}
